@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* hidden content */
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1;
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            z-index: 2;
+            text-align: center;
+        }
+
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+
+        .popup-content {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <button id="open-button">Open Popup</button>
+
+    <!-- hidden content -->
+    <div class="overlay" id="overlay"></div>
+
+    <div class="popup" id="popup">
+        <span class="close-button" id="close-button">&times;</span>
+        <h2>Professional Popup</h2>
+        <div class="popup-content">
+            <p>This is a professional styled popup with more information.</p>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, dignissimos!
+            </p>
+            <button id="confirm-button">OK</button>
+        </div>
+    </div>
+
+    <script>
+        const openButton = document.getElementById("open-button");
+        const overlay = document.getElementById("overlay");
+        const popup = document.getElementById("popup");
+        const closeButton = document.getElementById("close-button");
+        const confirmButton = document.getElementById("confirm-button");
+
+        openButton.addEventListener("click", function() {
+            overlay.style.display = "block";
+            popup.style.display = "block";
+        });
+
+        closeButton.addEventListener("click", function() {
+            overlay.style.display = "none";
+            popup.style.display = "none";
+        });
+
+        confirmButton.addEventListener("click", function() {
+            overlay.style.display = "none";
+            popup.style.display = "none";
+        });
+
+        overlay.addEventListener("click", function() {
+            if (event.target === overlay) {
+                overlay.style.display = "none";
+                popup.style.display = "none";
+            }
+        });
+    </script>
+</body>
+</html>
