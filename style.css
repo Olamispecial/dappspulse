@@ -1,5 +1,6 @@
 body {
     box-sizing: border-box;
+    background: linear-gradient(to bottom right, #444, #000);
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
@@ -153,7 +154,7 @@ footer > p > a {
 }
 
 .disclaimer {
-    background-color: hsla(0, 0%, 100%, .1);
+    background-color: hsla(0, 0%, 100%, 0.2);
     padding: 10px 0px;
 }
 
